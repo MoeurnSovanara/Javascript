@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstraplink2v5.0.min.css">
+    <style>
+        .box{
+            background-color: yellowgreen;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+        }
+        .button button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="box"></div>
+        <br>
+        <div class="button">
+            <button id="btn1" onclick="btnClick1()" class="btn btn-danger">Danger</button>
+            <button id="btn2" onclick="btnClick2()" class="btn btn-secondary">Gray</button>
+        </div>
+    </div>
+</body>
+<script>
+    let btn1=document.getElementById("btn1");
+    let btn2=document.getElementById("btn2");
+    let box =document.querySelector(".box");
+    function btnClick1(){
+        box.style.backgroundColor = "red";
+    }
+    function btnClick2(){
+        box.style.backgroundColor = "gray";
+    }
+</script>
+</html>

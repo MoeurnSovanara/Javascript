@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 70%;
+            height: auto;
+            margin: auto;
+        }
+        ul{
+            width: 100%;
+            list-style: none;
+            display: flex;
+        }
+        ul li{
+            margin: 20px;
+        }
+        ul li a{
+            color: lightcyan;
+            font-size: 30px;
+            font-weight: 800;
+            text-decoration: none;
+            padding: 10px;
+        }
+        li a:hover{
+            color: yellow;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="item"><a href="#">home</a></li>
+        <li class="item"><a href="#">Shop</a></li>
+        <li class="item"><a href="#">Page</a></li>
+        <li class="item"><a href="#">Game</a></li>
+    </ul>
+</body>
+    <script>
+        let ul=document.querySelector("ul");
+        let item =document.querySelector(".item");
+        ul.style.backgroundColor ="red";
+        item.style.borderRadius ="8px"
+        item.style.backgroundColor ="blue";
+        item.style.padding="8px"
+    </script>
+</html>
