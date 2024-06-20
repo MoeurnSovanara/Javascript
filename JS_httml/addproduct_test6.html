@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstraplink2v5.0.min.css">
+    <style>
+        .Card{
+            border: 2px solid greenyellow;
+        }
+        img{
+            width: 100%;
+            height: 250px;
+            border-radius: 5px;
+        }
+        h1{
+            color: rgb(247, 13, 161);
+            font-weight: 1000;
+        }
+        h3{
+            color:red;
+            font-weight: 800;
+        }
+        h4{
+            color: green;
+            font-weight: 1000;
+        }
+        p{
+            color:blue;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class=" text-center">
+            <h1>FIND DATA IN ARRAY</h1>
+            <div class="row mt-5">
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let Array =[
+        {id:1001,name:"COKE",Des:"Sweet And Powerful",img:"/JS_httml/pic/pic1.jpeg"},
+        {id:1002,name:"MILE",Des:"Nice Milk And Fresh",img:"/JS_httml/pic/pic2.webp"},
+        {id:1003,name:"BACCHUS",Des:"Sugar Free 100%",img:"/JS_httml/pic/pic3.jpg"},
+        {id:1004,name:"POKARISWEAT",Des:"Help Provide Power",img:"/JS_httml/pic/pic4.jpg"},
+        {id:1005,name:"VITAL",Des:"Not Thirsty And Not Sore Throat",img:"/JS_httml/pic/pic5.jpeg"},
+        {id:1006,name:"APPLE JUICE",Des:"Fresh And Very Healthy",img:"/JS_httml/pic/pic6.jpg"},
+        {id:1007,name:"PEPSI",Des:"Healthy And Power",img:"/JS_httml/pic/pic7.jpg"},
+        {id:1008,name:"FANNTA",Des:"So Delicous And So Happy",img:"/JS_httml/pic/pic8.webp"},
+    ];
+let card = document.querySelector(".row");
+var data="";
+for(i in Array){
+    data+=`
+        <div class="col-lg-3 col-md-6 mt-2">
+            <div class="Card p-2">
+                <h3 class="Name text-center">${Array[i].name}</h3>
+                <img src="${Array[i].img}" alt="">
+                <h4 class="ID text-center">${Array[i].id}</h4>
+                <p class="des text-center">${Array[i].Des}</p>
+            </div>
+        </div>
+    `
+}
+card.innerHTML =data;
+</script>
+</html>
