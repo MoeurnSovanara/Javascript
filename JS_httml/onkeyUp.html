@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstraplink2v5.0.min.css">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+    }
+    h2{
+        text-transform: capitalize;
+    }
+</style>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-success">Event onKey Up in JS</h1>
+        <input onkeyup="search()" type="text" class="form-control w-50" placeholder="Enter name of pic that you want to search">
+        <div class="row">
+            
+        </div>
+    </div>
+</body>
+<script>
+    let Array =[
+        {name:"Hero",pic:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjEldj32wWteKGo__2wD9ybsZGB3_iavVWEQ&s"},
+        {name:"Star Gold Skin",pic:"https://i.pinimg.com/736x/80/a6/05/80a6059a2c33af4fddcf4a9baea95ab2.jpg"},
+        {name:"Exuacis skin",pic:"https://cdnb.artstation.com/p/assets/images/images/059/009/841/large/al-olayvar-kagurafp2.jpg?1675426856"},
+        {name:"Special Skin",pic:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDrx1KH0Yd5t6vVrucxAlCmGpA2BPc282WnA&s"},
+        {name:"Summer Skin",pic:"https://tiermaker.com/images/template_images/2022/15272488/mlbb-kagura-skin-tier-15272488/psx20220814004115jpg.png"},
+        {name:"Star Skin",pic:"https://oneesports.blob.core.windows.net/cdn-data/2021/03/MLBB_RainWalk_Kagura.jpg"}
+    ];
+    let card =document.querySelector(".row");
+    function search(){
+        let input=document.querySelector("input").value.toLowerCase();  
+        let search = Array.filter(item=>item.name.toLowerCase().includes(input));
+        card.innerHTML="";
+        search.map((e)=>{
+            card.innerHTML +=`
+                <div class="col-md-3 col-lg-3 col-md-6 p-2">
+                    <div class="card p-2">
+                        <h2 class="name text-center">${e.name}</h2>
+                        <img src="${e.pic}" alt="">
+                    </div>
+                </div>
+            `;
+        });
+    }
+    search();
+</script>
+</html>
