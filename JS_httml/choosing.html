@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstraplink2v5.0.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-danger text-center">Choose Img in javaScript</h1>
+        <div class="box w-50 m-auto bg-warning p-3">
+            <img src="/JS_httml/pic/nopic1.jpg" alt="" width="85%" height="300px" class="rounded" style="margin-left: 45px;" id="img">
+            <input type="file" class="form-control mt-2" id="file">
+        </div>
+    </div>
+</body>
+<script>
+    let img=document.getElementById("img");
+    document.getElementById("file").onchange = function(){
+        img.src=URL.createObjectURL(this.files[0]);
+    }
+</script>
+</html>

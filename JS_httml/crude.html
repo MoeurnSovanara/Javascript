@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstraplink2v5.0.min.css">
+</head>
+<style>
+    label{
+        font-weight: 1000;
+    }
+</style>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center text-danger">Crud in javaScript</h1>
+        <div class="row">
+            <div class="col-md-6 p-3">
+                <div class="border border-danger rounded bg-warning p-3">
+                    <h1 class="text-center text-primary">Add Product</h1>
+                    <label for="user" class="text-success">ProductName:</label>
+                    <input type="text" id="user" placeholder="Enter Name..." class="form-control">
+                    <label for="price" class="text-success">Price:</label>
+                    <input type="text" id="price" placeholder="Enter Price..." class="form-control">
+                    <label for="qty" class="text-success">Quantity:</label>
+                    <input type="text" id="qty" placeholder="Enter Qty..." class="form-control">
+                    <button onclick="addproduct()" class="btn btn-primary mt-3">Add Product</button>
+                    <button onclick="updateProduct()" class="btn btn-danger mt-3">Update Product</button>
+                    <button onclick="DeleteRow()" class="btn btn-success mt-3">Delete Product</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bg-danger p-3 rounded mt-3">
+                    <table id="productBody" class="table table-bordered table-light p-2 mt-3">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Picture</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let rIndex,table=document.getElementById("productBody");
+    function addproduct(){
+        newRow = table.insertRow(table.length);
+        col1=newRow.insertCell(0);
+        col2=newRow.insertCell(1);
+        col3=newRow.insertCell(2);
+        let user = document.getElementById("user").value;
+        let price = document.getElementById("price").value;
+        let qty =document.getElementById("qty").value;
+
+        col1.innerHTML=user;
+        col2.innerHTML=price;
+        col3.innerHTML=qty;
+        selectRow();
+        user=document.getElementById("user").value="";
+        qty=document.getElementById("qty").value="";
+        price=document.getElementById("price").value="";
+    }
+    function selectRow(){
+        for(var i=0;i<table.rows.length;i++){
+            table.rows[i].onclick=function(){
+                if(rIndex!==undefined){
+                   table.rows[rIndex].classList.remove("selected");
+                }
+                rIndex=this.rowIndex;
+                this.classList.add("selected");
+                document.getElementById("user").value=this.cells[0].innerHTML;
+                document.getElementById("price").value=this.cells[1].innerHTML;
+                document.getElementById("qty").value=this.cells[2].innerHTML;
+            }
+        }
+    }
+    selectRow();
+    function updateProduct(){
+        // if(rIndex==undefined){
+        //     alert("Please Select your Product to update");
+        //     return;
+        // }
+        let newUser =document.getElementById("user").value;
+        let newPrice =document.getElementById("price").value;
+        let newQty =document.getElementById("qty").value;
+
+        table.rows[rIndex].cells[0].innerHTML=newUser;
+        table.rows[rIndex].cells[1].innerHTML=newPrice;
+        table.rows[rIndex].cells[2].innerHTML=newQty;
+
+        user=document.getElementById("user").value="";
+        qty=document.getElementById("qty").value="";
+        price=document.getElementById("price").value="";
+    }
+    function DeleteRow() {
+        if (rIndex === undefined) {
+            alert("Please select a product to delete.");
+            return;
+        }
+
+        table.deleteRow(rIndex);
+        user=document.getElementById("user").value="";
+        qty=document.getElementById("qty").value="";
+        price=document.getElementById("price").value="";
+    }
+ //   selectRow();
+</script>
+</html>
